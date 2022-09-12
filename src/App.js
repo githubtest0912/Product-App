@@ -1,15 +1,16 @@
 
 import './App.css';
-import ProductCard from './components/ProductCard';
+//import Card from './components/Card';
 
 
-//import AllFileTogether from './components/AllFileTogether';
+
+import AllFileTogether from './components/AllFileTogether';
 
 function App() {
   return (
     <div className="App">
-     {/* <AllFileTogether /> */}
-     <ProductCard />
+     <AllFileTogether />
+    {/* <Card /> */}
       </div>
   );
 }
