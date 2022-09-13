@@ -8,11 +8,13 @@ import Product from './Product'
 import Notfound from "./Notfound";
 // import ProductDetails from "./ProductDetails";
 import { Route, Routes } from "react-router-dom";
+import Footer from "./Footer";
 
 const AllFileTogether = () => {
   return (
     <div>
       <Navbar />
+     
       
       <Routes>
         <Route path="/" element={<Home />} />
@@ -25,7 +27,7 @@ const AllFileTogether = () => {
         <Route path="*" element={<Notfound />} />
       </Routes>
       
-      
+      <Footer />
     </div>
   );
 };
