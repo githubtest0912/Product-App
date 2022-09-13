@@ -35,8 +35,8 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link fs-5 text-white" to="/product">
-                  Product
+                <NavLink className="nav-link fs-5 text-white" to="/products">
+                  Products
                 </NavLink>
               </li>
               
@@ -63,6 +63,9 @@ const Navbar = () => {
 
      
     </div>
+
+  
+    
   );
 };
 
