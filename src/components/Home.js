@@ -1,7 +1,5 @@
 import React from "react";
 
-//import { NavLink } from 'react-router-dom';
-
 import { useState, useEffect } from "react";
 
 const Home = () => {
@@ -25,6 +23,10 @@ const Home = () => {
 
   return (
     <div className="container color">
+      <div>
+        <h1 className="text-center text-white">Our Products</h1>
+      </div>
+      
       <div className="row">
         {product.map((data) => (
           <div className="col-md-3 animated fadeIn" key={data.id}>
@@ -36,10 +38,15 @@ const Home = () => {
                 {/* // card title */}
 
                 <h6 className="card-title">{data.title}</h6>
-                {/* <p className="card-title">{data.description}</p> */}
+                
                 <h6 className="card-title">{data.category}</h6>
-                {/* <h6 className="card-title">{data.rating.rate}</h6>
-                <h6 className="card-title">{data.rating.count}</h6> */}
+
+                {/* rate with star */}
+
+                <p className="lead fw-bolder">
+                  {data.rating && data.rating.rate}
+                  <i className="fa fa-star star-color"></i>
+                </p>
 
                 <h4 className="card-text">${data.price}</h4>
               </div>
