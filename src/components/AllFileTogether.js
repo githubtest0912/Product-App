@@ -3,8 +3,8 @@ import React from "react";
 
 import Home from "./Home";
 import Navbar from "./Navbar";
-import Product from "./New project/Products";
-import ProductDetails from "./New project/Product";
+import Products from "./Products";
+import Product from './Product'
 import Notfound from "./Notfound";
 // import ProductDetails from "./ProductDetails";
 import { Route, Routes } from "react-router-dom";
@@ -18,9 +18,9 @@ const AllFileTogether = () => {
         <Route path="/" element={<Home />} />
         
        
-        <Route path="/product" element={<Product />} />
+        <Route path="/products" element={<Products />} />
       
-        <Route path="/product/:id" element ={ProductDetails} />
+        <Route path="/products/:id" element ={<Product />} />
        
         <Route path="*" element={<Notfound />} />
       </Routes>
