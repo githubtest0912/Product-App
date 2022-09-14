@@ -28,10 +28,10 @@ const Product = () => {
   const ShowProduct = () => {
     return (
       <>
-        <div className="col-md-6">
+        <div className="col-md-6 mt-5">
           <img src={item.image} alt={item.title} height="400px" width="400px" />
         </div>
-        <div className="col-md-6">
+        <div className="col-md-6 mt-5">
           <h4 className="text-uppercase text-black-50">{item.category}</h4>
           <h1 className="display-5">{item.title}</h1>
           <p className="lead fw-bolder">
