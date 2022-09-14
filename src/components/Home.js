@@ -1,5 +1,5 @@
 import React from "react";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
 
 const Home = () => {
@@ -33,7 +33,7 @@ const Home = () => {
           onChange={(e) => setQuery(e.target.value)}
         ></input>
       </div>
-
+     
       <div className="row mt-5">
         {/* // search product by title */}
         {product

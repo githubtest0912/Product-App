@@ -39,6 +39,7 @@ const Products = () => {
         </div>
         <div className="col-md-3">
         <Skeleton height={350}/>
+      
         </div>
     </>
     );
@@ -56,6 +57,7 @@ const Products = () => {
     return (
       <>
         <div className="buttons d-flex justify-content-center mb-5 pb-5">
+          
           <button className="btn btn-outline-dark me-2 " onClick={() => setFilter(product)}>All</button>
           <button className="btn btn-outline-dark me-2" onClick={() => filterProduct("men's clothing")}>
             Men's Collection
@@ -83,7 +85,7 @@ const Products = () => {
                    
                    {/*  product full details will come here by id while pressing the button*/}
 
-                    <NavLink to={`/products/${item.id}`} className="btn btn-primary">
+                    <NavLink to={`/products/${item.id}`} state={item} className="btn btn-primary">
                       Buy Now
                     </NavLink>
                   </div>
