@@ -42,7 +42,7 @@ const Navbar = () => {
 
             <div className="buttons d-flex">
               <button className="btn">
-                <NavLink to="/login" className="btn btn-outline-light ms-2">
+                <NavLink to="/" className="btn btn-outline-light ms-2">
                   <i class="fa fa-sign-in px-2" aria-hidden="true"></i>Login
                 </NavLink>
               </button>
@@ -50,7 +50,7 @@ const Navbar = () => {
 
             <div className="buttons">
               <button className="btn">
-                <NavLink to="/register" className="btn btn-outline-light ms-2">
+                <NavLink to="/" className="btn btn-outline-light ms-2">
                   <i class="fa fa-user-plus px-2" aria-hidden="true"></i>
                   Register
                 </NavLink>
