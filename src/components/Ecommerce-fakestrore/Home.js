@@ -1,16 +1,13 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 
 const Home = () => {
   const [product, setProduct] = useState([]);
-  // search product by title
-  const [query, setQuery] = useState("");
-
-
-
+  
   const fetchData = () => {
-    const API_URL = "https://fakestoreapi.com/products";
+    const API_URL = "https://fakestoreapi.com/products?limit=12";
     fetch(API_URL)
       .then((response) => {
         if (!response.ok) throw Error("Did not received expected data");
@@ -27,25 +24,19 @@ const Home = () => {
 
   return (
     <div className="container color">
-      <div className="d-flex justify-content-between">
+      <div className="d-flex justify-content-center">
         <h3 className="diplay-6 ">Our Products</h3>
-        <input
-          type="text"
-          placeholder="search..."
-          onChange={(e) => setQuery(e.target.value)}
-        ></input>
+        
       </div>
      
       <div className="row mt-5">
-        {/* // search product by title */}
-        {product
-          .filter((f) => f.title.toLowerCase().includes(query))
-          .map((data) => (
+       
+        {product.map((data) => (
             <div className="col-md-3 animated fadeIn" key={data.id}>
               <div className="card">
                 <div className="card-body">
                   <div className="avatar">
-                    <img src={data.image} className="card-img-top" alt="" />
+                    <NavLink to ='/products'><img src={data.image} className="card-img-top" alt="" /></NavLink>
                   </div>
                   {/* // card title */}
 

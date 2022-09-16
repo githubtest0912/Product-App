@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
-import Skeleton from 'react-loading-skeleton'
+import Skeleton from "react-loading-skeleton";
 import { NavLink } from "react-router-dom";
 
 const Products = () => {
   const [product, setProduct] = useState([]);
+ 
+
   const [filter, setFilter] = useState(product);
   const [loading, setLoading] = useState(false);
+
   let shop = true;
   useEffect(() => {
     const getProducts = async () => {
@@ -26,48 +29,68 @@ const Products = () => {
 
   // loading
   const Loading = () => {
-    return( 
-    <>
-    <div className="col-md-3">
-        <Skeleton height={350}/>
+    return (
+      <>
+        <div className="col-md-3">
+          <Skeleton height={350} />
         </div>
         <div className="col-md-3">
-        <Skeleton height={350}/>
+          <Skeleton height={350} />
         </div>
         <div className="col-md-3">
-        <Skeleton height={350}/>
+          <Skeleton height={350} />
         </div>
         <div className="col-md-3">
-        <Skeleton height={350}/>
-      
+          <Skeleton height={350} />
         </div>
-    </>
+      </>
     );
   };
 
+  
   // filter the product according to the category
 
   const filterProduct = (categories) => {
-   const updatedList = product.filter((x) =>x.category === categories)
-   setFilter(updatedList)
-
-  }
+    const updatedList = product.filter((x) => x.category === categories);
+    setFilter(updatedList);
+  };
 
   const ShowProducts = () => {
     return (
       <>
         <div className="buttons d-flex justify-content-center mb-5 pb-5">
-          
-          <button className="btn btn-outline-dark me-2 " onClick={() => setFilter(product)}>All</button>
-          <button className="btn btn-outline-dark me-2" onClick={() => filterProduct("men's clothing")}>
+           <button
+            className="btn btn-outline-dark me-2 "
+            onClick={() => setFilter(product)}
+          >
+            All
+          </button>
+          <button
+            className="btn btn-outline-dark me-2"
+            onClick={() => filterProduct("men's clothing")}
+          >
             Men's Collection
           </button>
-          <button className="btn btn-outline-dark me-2" onClick={() => filterProduct("women's clothing")}>
+          <button
+            className="btn btn-outline-dark me-2"
+            onClick={() => filterProduct("women's clothing")}
+          >
             Women's Collection
           </button>
-          <button className="btn btn-outline-dark me-2" onClick={() => filterProduct("jewelery")}>Jewelery</button>
-          <button className="btn btn-outline-dark me-2" onClick={() => filterProduct("electronics")}>Electronic</button>
+          <button
+            className="btn btn-outline-dark me-2"
+            onClick={() => filterProduct("jewelery")}
+          >
+            Jewelery
+          </button>
+          <button
+            className="btn btn-outline-dark me-2"
+            onClick={() => filterProduct("electronics")}
+          >
+            Electronic
+          </button>
         </div>
+        {/* // filter */}
         {filter.map((item) => {
           return (
             <>
@@ -82,10 +105,14 @@ const Products = () => {
                   <div className="card-body">
                     <h5 className="card-title mb-0">{item.title}</h5>
                     <p className="card-text lead fw-bold">${item.price}</p>
-                   
-                   {/*  product full details will come here by id while pressing the button*/}
 
-                    <NavLink to={`/products/${item.id}`} state={item} className="btn btn-primary">
+                    {/*  product full details will come here by id while pressing the button*/}
+
+                    <NavLink
+                      to={`/products/${item.id}`}
+                      state={item}
+                      className="btn btn-primary"
+                    >
                       Buy Now
                     </NavLink>
                   </div>
@@ -110,6 +137,7 @@ const Products = () => {
 
       <div className="row justify-content-center">
         {loading ? <Loading /> : <ShowProducts />}
+       
       </div>
     </div>
   );
